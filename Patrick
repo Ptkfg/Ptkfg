@@ -1,0 +1,47 @@
+#cronometro em JavaScript
+
+let timer
+let seconds = 0
+let minutes = 0 
+let hours = 0
+
+function startStop(){
+    if (timer){
+        clearInterval(timer)
+        timer = null
+    } else{
+        timer = setInterval(updateTime, 1000)
+    }
+}
+
+function reset(){
+    clearInterval(timer)
+    timer = null
+    seconds = 0
+    minutes = 0 
+    hours = 0
+    updadeDisplay()
+}
+
+function updateTime(){
+    seconds++
+    if (seconds === 60){
+        seconds = 0 
+        minutes++
+        if(minutes === 60){
+            minutes = 0
+            hours++
+        }
+    }
+    updadeDisplay()
+}
+
+function updadeDisplay(){
+    const formattedTime = padNumber(hours) + ':' + padNumber(minutes)
+    + ':' + padNumber(seconds)
+    document.getElementById('Display').innerText = formattedTime;
+}
+
+function padNumber(number) {
+    return (number < 10 ? '0' : '') + number;
+}
