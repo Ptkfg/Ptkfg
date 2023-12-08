@@ -1,0 +1,16 @@
+// questao de prova
+// criando uma funcao fatorial para faculdade em JS
+
+function fatorial(numero) { 
+    // colocando o resultado para receber 1 que será usado para calcular 
+    let resultado = 1; 
+    for (let i = 2; i <= numero; i++) { 
+        // começa com 2 e vai ate o numro fornecido no console
+        resultado *= i; // resultado é multiplica pelo valor de i 
+    } 
+    return resultado; 
+} 
+
+console.log(fatorial(2)); //vai imprimir 2 
+console.log(fatorial(3)); //vai imprimir 6 
+console.log(fatorial(4)); //vai imprimir 24
